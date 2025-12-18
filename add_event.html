@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Create New Event</h2>
+
+<form method="POST" class="form-card">
+    <label>Event Name</label>
+    <input name="title" required>
+
+    <label>Description</label>
+    <textarea name="description"></textarea>
+
+    <label>Start Time</label>
+    <input type="datetime-local" name="start" required>
+
+    <label>End Time</label>
+    <input type="datetime-local" name="end" required>
+
+    <button class="btn-primary">Create Event</button>
+</form>
+
+{% endblock %}

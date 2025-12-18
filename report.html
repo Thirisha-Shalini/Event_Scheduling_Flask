@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Resource Utilisation Report</h2>
+
+<form method="POST" class="form-inline">
+    <input type="date" name="start" required>
+    <input type="date" name="end" required>
+    <button class="btn-primary">Generate</button>
+</form>
+
+{% if data %}
+<table class="table">
+    <tr>
+        <th>Resource</th>
+        <th>Total Hours</th>
+    </tr>
+    {% for r in data %}
+    <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

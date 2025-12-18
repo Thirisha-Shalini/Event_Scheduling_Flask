@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Allocate Resource</h2>
+
+<form method="POST" class="form-card">
+    <label>Select Event</label>
+    <select name="event">
+        {% for e in events %}
+        <option value="{{ e.event_id }}">{{ e.title }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Select Resource</label>
+    <select name="resource">
+        {% for r in resources %}
+        <option value="{{ r.resource_id }}">{{ r.resource_name }}</option>
+        {% endfor %}
+    </select>
+
+    <button class="btn-primary">Allocate</button>
+</form>
+
+{% endblock %}
