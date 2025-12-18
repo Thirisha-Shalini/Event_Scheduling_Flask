@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-header">
+    <h2>All Events</h2>
+    <a class="btn-secondary" href="/add_event">+ Add Event</a>
+</div>
+
+{% if events %}
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Start</th>
+        <th>End</th>
+    </tr>
+    {% for e in events %}
+    <tr>
+        <td>{{ e.title }}</td>
+        <td>{{ e.start_time }}</td>
+        <td>{{ e.end_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p class="empty">No events yet. Create your first event!</p>
+{% endif %}
+
+{% endblock %}

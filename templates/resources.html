@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-header">
+    <h2>Resources</h2>
+    <a class="btn-secondary" href="/add_resource">+ Add Resource</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+    </tr>
+    {% for r in resources %}
+    <tr>
+        <td>{{ r.resource_name }}</td>
+        <td>{{ r.resource_type }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

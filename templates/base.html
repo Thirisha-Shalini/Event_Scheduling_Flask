@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Scheduler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="app-container">
+    <header class="header">
+        <h1>📅 Event Scheduling & Resource Allocation</h1>
+        <p>Plan events, assign resources, and track utilization with ease.</p>
+    </header>
+
+    <nav class="tabs">
+        <a href="/events">Events</a>
+        <a href="/resources">Resources</a>
+        <a href="/allocate">Allocations</a>
+        <a href="/report">Report</a>
+    </nav>
+
+    <div class="content">
+        {% for msg in get_flashed_messages() %}
+            <div class="alert">{{ msg }}</div>
+        {% endfor %}
+
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
